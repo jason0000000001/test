@@ -50,3 +50,4 @@ class DataheartbeatSerializer(ModelSerializer):
     class Meta:
         model = Data
         fields = ['heartbeat']
+

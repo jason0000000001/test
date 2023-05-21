@@ -57,11 +57,14 @@ class Data(models.Model):
     #def __str__(self):
     #    return self.name
 
-
+    
 class Medicine(models.Model):
     userid = models.ForeignKey(User, on_delete=models.CASCADE,default = False)#使用者id 
-    medicine = models.TextField(null=True)
-
+    name = models.TextField(null=True)#藥品名稱
+    describe = models.TextField(null=True)#藥品資訊
+    dose = models.IntegerField(default = True)#藥品劑量
+    hour = models.IntegerField(null=True,blank=True)#提醒時間(時)
+    min = models.IntegerField(null=True,blank=True)#提醒時間(分)
 
     def __str__(self):
-        return self.medicine
+        return self.name
